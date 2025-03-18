@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../ahedth-details-screen.dart';
 import 'hadeth.dart';
 class ahadeth extends StatefulWidget {
   static const String routename = "ahadeth";
@@ -37,9 +38,14 @@ class _ahadethState extends State<ahadeth> {
           Divider(),
           Expanded(
               child: ListView.separated(itemBuilder: (context, index) =>
-                  Text(ahadethlist[index].hadethtitle, textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 30),),
+                  InkWell(
+                    onTap: (){
+                      Navigator.pushNamed(context, Ahedthdetailsscreen.routename,arguments: hadethcontent(title: ahadethlist[index].hadethtitle, content: ahadethlist[index].hadethcontent));
+                    },
+                    child: Text(ahadethlist[index].hadethtitle, textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 30),),
+                  ),
                   separatorBuilder: (context, index) => SizedBox(height: 10,),
                   itemCount: ahadethlist.length))
         ],
