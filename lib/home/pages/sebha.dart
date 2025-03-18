@@ -49,6 +49,7 @@ class _SebhaState extends State<sebha> {
                         child: Image.asset("assets/images/body_of_seb7a.png")),
                   ),
                   Positioned(
+                    
                     top: 0.028 * height,
                     left: 0.22  * width,
                     child: Image.asset(
