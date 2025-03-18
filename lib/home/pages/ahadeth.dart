@@ -13,7 +13,6 @@ class ahadeth extends StatefulWidget {
 class _ahadethState extends State<ahadeth> {
    @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     loadfile();
   }
