@@ -20,7 +20,7 @@ class suranamewight extends StatelessWidget {
             height: 50,
             width: 4,
             decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary
+                color: Theme.of(context).colorScheme.onPrimaryContainer
             ),
           ),
           Expanded(child: Text(suranumber,textAlign: TextAlign.center,style: TextStyle(fontWeight:FontWeight.bold,fontSize: 25),)),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamii/styles/appstyle.dart';
 
 class sebha extends StatefulWidget {
   @override
@@ -46,13 +47,13 @@ class _SebhaState extends State<sebha> {
                     child: AnimatedRotation(
                         turns: rotationAngle/360,
                         duration: Duration(milliseconds: 300),
-                        child: Image.asset("assets/images/body_of_seb7a.png")),
+                        child: Image.asset(Appstyle.isdark?"assets/images/dark_body_of_seb7a.png":"assets/images/body_of_seb7a.png")),
                   ),
                   Positioned(
 
                     top: 0.028 * height,
                     left: 0.22  * width,
-                    child: Image.asset(
+                    child: Image.asset(Appstyle.isdark?"assets/images/dark_head_of_seb7a.png":
                       "assets/images/head_of_seb7a.png",
                       width: width * 0.25,
                     ),
@@ -77,7 +78,7 @@ class _SebhaState extends State<sebha> {
                     ),
                     child: Text(
                       "$index",
-                      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                      style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ),
                 ),

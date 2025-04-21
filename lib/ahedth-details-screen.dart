@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamii/home/pages/ahadeth.dart';
+import 'package:islamii/styles/appstyle.dart';
 class Ahedthdetailsscreen extends StatelessWidget {
   static const String routename =  "ahadethdetails";
   @override
@@ -7,7 +8,7 @@ class Ahedthdetailsscreen extends StatelessWidget {
     hadethcontent arg = ModalRoute.of(context)?.settings.arguments as hadethcontent;
     return Container(
         decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/images/background.png"),fit: BoxFit.fill ),
+          image: DecorationImage(image: AssetImage(Appstyle.isdark?"assets/images/bg.png":"assets/images/background.png"),fit: BoxFit.fill ),
         ),
         child: Scaffold(
             appBar: AppBar(
@@ -17,13 +18,10 @@ class Ahedthdetailsscreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: Card(
-                    child: SingleChildScrollView(child: Text(arg.content,style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold
-                    ),))
+                    child: SingleChildScrollView(child: Text(arg.content,style:Theme.of(context).textTheme.bodyLarge)
                   ),
                 ),
-              ],
+                )],
             )
         ));
   }

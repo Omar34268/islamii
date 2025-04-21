@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import '../../ahedth-details-screen.dart';
 import 'hadeth.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class ahadeth extends StatefulWidget {
   static const String routename = "ahadeth";
 
@@ -26,9 +27,8 @@ class _ahadethState extends State<ahadeth> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("ahadeth",
+              Text(AppLocalizations.of(context)!.ahadeth,
                 style: TextStyle(
-                  color: Colors.black,
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),

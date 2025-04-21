@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamii/home/suranamewight.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class moshaf extends StatelessWidget {
   static const String routename="Quran";
   List<String> suraNames = [
@@ -255,15 +256,15 @@ class moshaf extends StatelessWidget {
           ),
           Row(
             children: [
-              Expanded(child: Text("SuraName",textAlign: TextAlign.center,style: TextStyle(fontWeight:FontWeight.bold,fontSize: 25 ),)),
+              Expanded(child: Text(AppLocalizations.of(context)!.sura_name,textAlign: TextAlign.center,style: Theme.of(context).textTheme.bodyMedium  ),),
               Container(
                 height: 50,
                 width: 4,
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary
+                  color: Theme.of(context).colorScheme.onPrimaryContainer
                 ),
               ),
-              Expanded(child: Text("SuraNumber",textAlign: TextAlign.center,style: TextStyle(fontWeight:FontWeight.bold,fontSize: 25),)),
+              Expanded(child: Text(AppLocalizations.of(context)!.verses_number,textAlign: TextAlign.center,style: Theme.of(context).textTheme.bodyMedium )),
             ],
           ),
           Divider(height: 0,),
