@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islamii/styles/appstyle.dart';
+import 'package:provider/provider.dart';
+
+import '../../provider/settingsprovider.dart';
 
 class sebha extends StatefulWidget {
   @override
@@ -14,6 +17,7 @@ class _SebhaState extends State<sebha> {
 
   @override
   Widget build(BuildContext context) {
+    Settingsprovider settingsprovider =Provider.of<Settingsprovider>(context);
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
 
@@ -47,13 +51,13 @@ class _SebhaState extends State<sebha> {
                     child: AnimatedRotation(
                         turns: rotationAngle/360,
                         duration: Duration(milliseconds: 300),
-                        child: Image.asset(Appstyle.isdark?"assets/images/dark_body_of_seb7a.png":"assets/images/body_of_seb7a.png")),
+                        child: Image.asset(settingsprovider.themeMode==ThemeMode.dark?"assets/images/dark_body_of_seb7a.png":"assets/images/body_of_seb7a.png")),
                   ),
                   Positioned(
 
                     top: 0.028 * height,
                     left: 0.22  * width,
-                    child: Image.asset(Appstyle.isdark?"assets/images/dark_head_of_seb7a.png":
+                    child: Image.asset(settingsprovider.themeMode==ThemeMode.dark?"assets/images/dark_head_of_seb7a.png":
                       "assets/images/head_of_seb7a.png",
                       width: width * 0.25,
                     ),

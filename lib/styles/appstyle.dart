@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 class  Appstyle extends StatelessWidget {
-  static bool isdark = true;
   static const Color darkprimary = Color(0xff141A2E);
   static  ThemeData lighttheme = ThemeData(
     bottomSheetTheme: BottomSheetThemeData(
