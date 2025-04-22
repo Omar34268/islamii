@@ -4,8 +4,10 @@ import 'package:islamii/home/pages/moshaf.dart';
 import 'package:islamii/home/pages/radio.dart';
 import 'package:islamii/home/pages/sebha.dart';
 import 'package:islamii/home/pages/setting_tab.dart';
+import 'package:islamii/provider/settingsprovider.dart';
 import 'package:islamii/styles/appstyle.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 class Homescreen extends StatefulWidget{
   static const String routename = "home";
 
@@ -25,10 +27,11 @@ class _HomescreenState extends State<Homescreen> {
 
   @override
   Widget build(BuildContext context) {
+    Settingsprovider settingsprovider =Provider.of<Settingsprovider>(context);
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage(Appstyle.isdark?
+            image: AssetImage(settingsprovider.themeMode==ThemeMode.dark?
                 "assets/images/bg.png":
                 "assets/images/background.png"),
         fit:  BoxFit.fill)

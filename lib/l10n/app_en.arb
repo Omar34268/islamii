@@ -6,5 +6,7 @@
   "ahadeth": "Ahadeth",
   "radio" : "Radio",
   "tasbeeh": "Tasbeeh",
-  "settings": "Settings"
+  "settings": "Settings",
+  "language": "Language",
+  "theme": "Theme"
 }

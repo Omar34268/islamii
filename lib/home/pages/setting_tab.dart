@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:islamii/home/pages/Langugebottom.dart';
-
+import 'package:islamii/provider/settingsprovider.dart';
+import 'package:provider/provider.dart';
 import 'Themebottom.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class SettingTab extends StatelessWidget {
 
   const SettingTab({super.key});
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
+    Settingsprovider settingsprovider =Provider.of<Settingsprovider>(context);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 
-          Text("Language:",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold ),),
+          Text("${AppLocalizations.of(context)!.language}:",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold ),),
           GestureDetector(
             onTap: (){
               showModalBottomSheet(context: context, builder:(context) => Langugebottom());
@@ -28,11 +31,12 @@ class SettingTab extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),
-                  child: Text("English",style: TextStyle(fontSize: 20),),
+                  child: Text(settingsprovider.language=="en"?
+                  "English":"العربيه",style: TextStyle(fontSize: 20),),
                 )),
           ),
           SizedBox(height: 20,),
-          Text("Theme:",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold ),),
+          Text("${AppLocalizations.of(context)!.theme}:",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold ),),
           GestureDetector(
             onTap: (){
               showModalBottomSheet(
@@ -47,7 +51,7 @@ class SettingTab extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),
-                  child: Text("Light",style: TextStyle(fontSize: 20),),
+                  child: Text(settingsprovider.themeMode==ThemeMode.light?"Light":"Dark",style: TextStyle(fontSize: 20),),
                 )),
           ),
 
